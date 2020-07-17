@@ -34,43 +34,47 @@ import java.util.List;
  */
 public class Vote extends Command {
 
-    private final DropParty dropParty;
+	private final DropParty dropParty;
 
-    public Vote(DropParty dropParty) {
-        super(dropParty, "vote");
-        setDescription("Votes for a drop party to start.");
-        setCommandUsage("/dp vote <party>");
-        setPermission(new Permission("dropparty.vote", PermissionDefault.TRUE));
-        setArgumentRange(1, 1);
-        this.dropParty = dropParty;
-    }
+	public Vote(DropParty dropParty) {
+		super(dropParty, "vote");
+		setDescription("Votes for a drop party to start.");
+		setCommandUsage("/dp vote <party>");
+		setPermission(new Permission("dropparty.vote", PermissionDefault.TRUE));
+		setArgumentRange(1, 1);
+		this.dropParty = dropParty;
+	}
 
-    @Override
-    public void execute(String command, CommandSender sender, String[] args) {
-        String partyName = args[0];
-        if (dropParty.getPartyManager().hasParty(partyName)) {
-            Party party = dropParty.getPartyManager().getParty(partyName);
-            if (party.get(PartySetting.VOTE_TO_START, Boolean.class)) {
-                String playerName = sender.getName();
-                if (party.isRunning()) {
-                    dropParty.getMessenger().sendMessage(sender, DPMessage.PARTY_ALREADYRUNNING, partyName);
-                } else if (party.hasVoted(playerName)) {
-                    dropParty.getMessenger().sendMessage(sender, DPMessage.PARTY_ALREADYVOTED, partyName);
-                } else {
-                    party.addVote(playerName);
-                    dropParty.getMessenger().sendMessage(sender, DPMessage.PARTY_VOTE, partyName);
-                }
-            } else {
-                dropParty.getMessenger().sendMessage(sender, DPMessage.PARTY_CANNOTVOTE, partyName);
-            }
-        } else {
-            dropParty.getMessenger().sendMessage(sender, DPMessage.PARTY_DOESNTEXIST, partyName);
-        }
-    }
+	@Override
+	public void execute(String command, CommandSender sender, String[] args) {
+		String partyName = args[0];
+		if (!dropParty.getPartyManager().hasParty(partyName)) {
+			dropParty.getMessenger().sendMessage(sender, DPMessage.PARTY_DOESNTEXIST, partyName);
+			return;
+		}
 
-    @Override
-    public List<String> getTabCompleteList(String[] args) {
-        return dropParty.getPartyManager().getPartyList();
-    }
+		Party party = dropParty.getPartyManager().getParty(partyName);
+		if (!party.get(PartySetting.VOTE_TO_START, Boolean.class)) {
+			dropParty.getMessenger().sendMessage(sender, DPMessage.PARTY_CANNOTVOTE, partyName);
+			return;
+		}
+
+		String playerName = sender.getName();
+		if (party.isRunning()) {
+			dropParty.getMessenger().sendMessage(sender, DPMessage.PARTY_ALREADYRUNNING, partyName);
+		} else if (party.hasVoted(playerName)) {
+			dropParty.getMessenger().sendMessage(sender, DPMessage.PARTY_ALREADYVOTED, partyName);
+		} else {
+			party.addVote(playerName);
+			dropParty.getMessenger().sendMessage(sender, DPMessage.PARTY_VOTE, partyName);
+		}
+
+
+	}
+
+	@Override
+	public List<String> getTabCompleteList(String[] args) {
+		return dropParty.getPartyManager().getPartyList();
+	}
 
 }
