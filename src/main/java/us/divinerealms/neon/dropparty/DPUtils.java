@@ -106,7 +106,7 @@ public final class DPUtils {
      * @return The random color.
      */
     public static Color randomColor() {
-        switch (RANDOM.nextInt(17)) {
+        switch (RANDOM.nextInt(16)) {
             case 0:
                 return Color.AQUA;
             case 1:
@@ -138,8 +138,6 @@ public final class DPUtils {
             case 14:
                 return Color.TEAL;
             case 15:
-                return Color.WHITE;
-            case 16:
                 return Color.YELLOW;
             default:
                 return Color.WHITE;
