@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 public class CommandGroup {
-	private final AmpJavaPlugin plugin;
+	protected final AmpJavaPlugin plugin;
 	private final String name;
 	private Permission permission;
 	private int minArgsLength = 0;
