@@ -26,6 +26,7 @@ import ninja.amp.amplib.command.commands.HelpCommand;
 import ninja.amp.amplib.command.commands.ReloadCommand;
 import ninja.amp.amplib.messenger.DefaultMessage;
 import ninja.amp.amplib.messenger.Messenger;
+import org.bstats.bukkit.Metrics;
 import us.divinerealms.neon.dropparty.commands.Create;
 import us.divinerealms.neon.dropparty.commands.Delete;
 import us.divinerealms.neon.dropparty.commands.ResetVotes;
@@ -134,6 +135,8 @@ public class DropParty extends AmpJavaPlugin {
                         .addChildCommand(new ListFireworkPoints(this)));
         dropParty.setPermission(new Permission("dropparty.admin", PermissionDefault.OP));
         getCommandController().addCommand(dropParty);
+
+        new Metrics(this, 8222);
     }
 
     @Override

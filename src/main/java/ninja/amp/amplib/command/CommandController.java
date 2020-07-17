@@ -3,7 +3,6 @@ package ninja.amp.amplib.command;
 import ninja.amp.amplib.AmpJavaPlugin;
 import ninja.amp.amplib.messenger.DefaultMessage;
 import ninja.amp.amplib.messenger.PageList;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
 
