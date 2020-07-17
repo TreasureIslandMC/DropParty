@@ -18,6 +18,14 @@
  */
 package us.divinerealms.neon.dropparty;
 
+import ninja.amp.amplib.AmpJavaPlugin;
+import ninja.amp.amplib.command.Command;
+import ninja.amp.amplib.command.CommandGroup;
+import ninja.amp.amplib.command.commands.AboutCommand;
+import ninja.amp.amplib.command.commands.HelpCommand;
+import ninja.amp.amplib.command.commands.ReloadCommand;
+import ninja.amp.amplib.messenger.DefaultMessage;
+import ninja.amp.amplib.messenger.Messenger;
 import us.divinerealms.neon.dropparty.commands.Create;
 import us.divinerealms.neon.dropparty.commands.Delete;
 import us.divinerealms.neon.dropparty.commands.ResetVotes;
@@ -41,14 +49,6 @@ import us.divinerealms.neon.dropparty.commands.set.SetTeleport;
 import us.divinerealms.neon.dropparty.config.ConfigType;
 import us.divinerealms.neon.dropparty.message.DPMessage;
 import us.divinerealms.neon.dropparty.modes.PlayerModeController;
-import us.divinerealms.neon.amplib.AmpJavaPlugin;
-import us.divinerealms.neon.amplib.command.Command;
-import us.divinerealms.neon.amplib.command.CommandGroup;
-import us.divinerealms.neon.amplib.command.commands.AboutCommand;
-import us.divinerealms.neon.amplib.command.commands.HelpCommand;
-import us.divinerealms.neon.amplib.command.commands.ReloadCommand;
-import us.divinerealms.neon.amplib.messenger.DefaultMessage;
-import us.divinerealms.neon.amplib.messenger.Messenger;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;

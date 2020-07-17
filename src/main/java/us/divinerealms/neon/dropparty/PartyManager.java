@@ -18,10 +18,10 @@
  */
 package us.divinerealms.neon.dropparty;
 
+import ninja.amp.amplib.messenger.Messenger;
+import ninja.amp.amplib.messenger.PageList;
 import us.divinerealms.neon.dropparty.config.ConfigType;
 import us.divinerealms.neon.dropparty.parties.Party;
-import us.divinerealms.neon.amplib.messenger.Messenger;
-import us.divinerealms.neon.amplib.messenger.PageList;
 import org.bukkit.configuration.file.FileConfiguration;
 
 import java.io.UnsupportedEncodingException;

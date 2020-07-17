@@ -18,6 +18,8 @@
  */
 package us.divinerealms.neon.dropparty.parties;
 
+import ninja.amp.amplib.messenger.Messenger;
+import ninja.amp.amplib.messenger.PageList;
 import us.divinerealms.neon.dropparty.DPChest;
 import us.divinerealms.neon.dropparty.DPFireworkPoint;
 import us.divinerealms.neon.dropparty.DPItemPoint;
@@ -25,8 +27,6 @@ import us.divinerealms.neon.dropparty.DPUtils;
 import us.divinerealms.neon.dropparty.DropParty;
 import us.divinerealms.neon.dropparty.config.ConfigType;
 import us.divinerealms.neon.dropparty.message.DPMessage;
-import us.divinerealms.neon.amplib.messenger.Messenger;
-import us.divinerealms.neon.amplib.messenger.PageList;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Chest;

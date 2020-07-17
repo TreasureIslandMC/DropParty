@@ -21,7 +21,7 @@ package us.divinerealms.neon.dropparty.config;
 /**
  * An enumeration of the drop party custom config types.
  */
-public enum ConfigType implements us.divinerealms.neon.amplib.config.ConfigType {
+public enum ConfigType implements ninja.amp.amplib.config.ConfigType {
     PARTY("parties.yml");
 
     private final String fileName;

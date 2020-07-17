@@ -18,7 +18,7 @@
  */
 package us.divinerealms.neon.dropparty.message;
 
-import us.divinerealms.neon.amplib.messenger.Message;
+import ninja.amp.amplib.messenger.Message;
 
 /**
  * Messages in Drop Party.

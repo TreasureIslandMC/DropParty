@@ -18,11 +18,11 @@
  */
 package us.divinerealms.neon.dropparty.commands.list;
 
+import ninja.amp.amplib.command.Command;
+import ninja.amp.amplib.messenger.PageList;
 import us.divinerealms.neon.dropparty.DropParty;
 import us.divinerealms.neon.dropparty.message.DPMessage;
 import us.divinerealms.neon.dropparty.parties.Party;
-import us.divinerealms.neon.amplib.command.Command;
-import us.divinerealms.neon.amplib.messenger.PageList;
 import org.bukkit.command.CommandSender;
 import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
